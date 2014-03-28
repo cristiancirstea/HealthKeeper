@@ -1,2 +1,5 @@
-#Ignore test files
+# Ignore test files
 test.php
+
+# Ignore qrcodes folder
+qrcodes/
