@@ -1,5 +1,5 @@
 <?php
     $_username = 'grigoroiualex';
-    $_dbName = 'HealthCare';
+    $_dbName = 'HealthKeeper';
     $_password = 'est1892';
 ?>
