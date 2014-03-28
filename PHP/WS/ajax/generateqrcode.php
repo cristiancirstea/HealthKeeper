@@ -1,14 +1,14 @@
 <?php
 include dirname(__FILE__) . '/../library/phputil/phpqrcode/qrlib.php';
 include dirname(__FILE__) . '/../library/phputil/db_connect.php';
-include dirname(__FILE__) . '/../include/myqrcode.html';
 
 // Fetch info
-$info = array('medicineName' => $_REQUEST['medicineName'], 
-              'hStart'       => $_REQUEST['hStart'],
-              'period'       => $_REQUEST['period'],
-              'span'         => $_REQUEST['span'],
-              'importance'   => $_REQUEST['importance']);
+$info = array('medicineName'    => $_REQUEST['medicineName'], 
+              'activeSubstance' => $_REQUEST['activeSubstance'],
+              'hStart'          => $_REQUEST['hStart'],
+              'period'          => $_REQUEST['period'],
+              'span'            => $_REQUEST['span'],
+              'importance'      => $_REQUEST['importance']);
 
 $info = json_encode($info);
 

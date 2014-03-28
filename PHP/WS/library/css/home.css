@@ -6,3 +6,12 @@
 .spacer-20 {
     height: 20px;
 }
+
+.hidden {
+    display: none;
+}
+
+#qr-placeholder {
+    width: 246px;
+    height: 246px;
+}
