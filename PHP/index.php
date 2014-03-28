@@ -7,9 +7,10 @@ $additionalCSS[] = array('stylesheet', 'WS/library/css/bootstrap-responsive.min.
 $additionalCSS[] = array('stylesheet', 'WS/library/css/bootstrap-datetimepicker.min.css');
 $additionalCSS[] = array('stylesheet', 'WS/library/css/datepicker.css');
 $additionalCSS[] = array('stylesheet', 'WS/library/css/style.css');
+$additionalCSS[] = array('stylesheet', 'WS/library/css/home.css');
 $additionalJS[] = 'WS/library/js/qrcode.js';
 
-include $_SERVER['HTTP_HOST'] . 'WS/include/header.html';
-include $_SERVER['HTTP_HOST'] . 'WS/include/home.html';
-include $_SERVER['HTTP_HOST'] . 'WS/include/footer.html';
+include dirname(__FILE__) . '/WS/include/header.html';
+include dirname(__FILE__) . '/WS/include/home.html';
+include dirname(__FILE__) . '/WS/include/footer.html';
 ?>
