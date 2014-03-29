@@ -129,62 +129,82 @@ class MyAPI extends API {
     protected function scheduleMyGP($myEmail, $GPEmail, $when) {
         $gp = ORM::for_table('GPSchedule')->raw_query('select * from GPSchedule where date = CURDATE() and email = "' . $GPEmail . '"');
         $cd = ORM::for_table('Credentials')->where('email', $myEmail);
-        $user = ORM::for_table('UsersSchedule')->where('user_id', $cd->user_id)
+        $user = ORM::for_table('UserSchedule')->where('user_id', $cd->user_id)
                                                ->find_one();
 
         switch ($when) {
             case 1:
                 $gp->f8t9 = 0;
                 $user->f8t9 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 2:
                 $gp->f9t10 = 0;
                 $user->f9t10 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 3:
                 $gp->f10t11 = 0;
                 $user->f10t11 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 4:
                 $gp->f11t12 = 0;
                 $user->f11t12 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 5:
                 $gp->f12t13 = 0;
                 $user->f12t13 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 6:
                 $gp->f13t14 = 0;
                 $user->f13t14 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 7:
                 $gp->f14t15 = 0;
                 $user->f14t15 = 0;
+                $gp->save();
+                $user->save();
                 break;
             
             case 8:
                 $gp->f15t16 = 0;
                 $user->f15t16 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 9:
                 $gp->f16t17 = 0;
                 $user->f16t17 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             case 10:
                 $gp->f17t18 = 0;
                 $user->f17t18 = 0;
+                $gp->save();
+                $user->save();
                 break;
 
             default:
-            return 'unsuccessfull';
+                return 'unsuccessfull';
                 break;
 
             return 'successful';

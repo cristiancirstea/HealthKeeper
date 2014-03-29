@@ -60,6 +60,11 @@
                     După completarea câmpurilor, click pe butonul Generează
                 </div>
             </div>
+            <form method="post" action="history.php" onsubmit="return validateForm()">
+                Introdu adresa de email pentru a vedea un istoric al rețetelor<br />
+                <input type="text" name="userEmail" id="userEmail" />
+                <button type="submit">Vezi istoric</button>
+            </form>
         </div>
     </div>
 </div>
