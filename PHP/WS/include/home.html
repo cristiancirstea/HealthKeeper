@@ -3,39 +3,52 @@
         <div class="col-md-1"></div>
         <div class="col-md-6">
             <div class="input-group">
+                <span class="input-group-addon">Nume:</span>
+                <input id="lastName" type="hidden" class="form-control" />
+            </div>
+            <div class="spacer-10"></div>
+            <div class="input-group">
+                <span class="input-group-addon">Prenume:</span>
+                <input id="firstName" type="hidden" class="form-control" />
+            </div>
+            <div class="hidden">
+                <input id="userId" type="text" />
+            </div>
+            <div class="spacer-10"></div>
+            <div class="input-group">
                 <span class="input-group-addon">Denumire medicament:</span>
                 <input id="medicineName" type="text" class="form-control" />
             </div>
-            <div class="spacer-20"></div>
+            <div class="spacer-10"></div>
             <div class="input-group">
                 <span class="input-group-addon">Substanța activă:</span>
                 <input id="activeSubstance" type="text" class="form-control" />
             </div>
-            <div class="spacer-20"></div>
+            <div class="spacer-10"></div>
             <div class="input-group">
                 <span class="input-group-addon">Ora primei administrări:</span>
                 <input id="hStart" type="text" class="form-control">
                 <span class="input-group-addon">0 - 24</span>
             </div>
-            <div class="spacer-20"></div>
+            <div class="spacer-10"></div>
             <div class="input-group">
                 <span class="input-group-addon">Se administrează o dată la:</span>
                 <input id="period" type="number" class="form-control">
                 <span class="input-group-addon">ore</span>
             </div>
-            <div class="spacer-20"></div>
+            <div class="spacer-10"></div>
             <div class="input-group">
                 <span class="input-group-addon">Timp de:</span>
                 <input id="span" type="text" class="form-control">
                 <span class="input-group-addon">zile</span>
             </div>
-            <div class="spacer-20"></div>
+            <div class="spacer-10"></div>
             <div class="input-group">
                 <span class="input-group-addon">Importanță:</span>
                 <input id="importance" type="text" class="form-control">
                 <span class="input-group-addon">0 - 5</span>
             </div>
-            <div class="spacer-20"></div>
+            <div class="spacer-10"></div>
             <button id="generate-qr" class="btn btn-danger">Generează <span class="glyphicon glyphicon-qrcode"></span></button>
             <span id="form-info"></span>
         </div>
