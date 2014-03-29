@@ -19,17 +19,17 @@ $PNG_WEB_DIR = dirname(__FILE__) . '/../qrcodes/';
 $errorCorrectionLevel = 'M';
 $matrixPointSize = 6;
 
-// Genereaza md5-ul unic pentru fiecare QR
+// Generează md5-ul unic pentru fiecare QR
 $md5 = md5($info . '|' . $errorCorrectionLevel . '|' . $matrixPointSize);
 
-// Verific daca exista deja in baza de date
+// Verifică dacă există deja în baza de date
 $QRCode = ORM::for_table('QRCodes')->where('md5', $md5)->find_one();
 
-// Daca exista, il folosesc direct
+// Dacă există, îl folosește direct
 if($QRCode) {
     $filename = $md5 . '.png';
 
-// Altfel in creez si il adaug in baza de date pentru o urmatoare refolosire
+// Altfel îl creează și îl adaugă în baza de date pentru o eventuală refolosire
 } else {
     $QRCode = ORM::for_table('QRCodes')->create();
     $QRCode->md5 = $md5;
@@ -44,10 +44,13 @@ if($QRCode) {
     $filename = basename($filename);
 }
 
+// Asociază codul QR al tratamentului utilizatorului căruia i-a fost prescris.
+// Mai întâi verifică dacă asocierea există deja
 $QRMap = ORM::for_table('QRMap')->where('qr_id', $QRCode->qr_id)
                                 ->where('user_id', $_REQUEST['userId'])
                                 ->find_one();
 
+// Iar dacî nu, o creează
 if(!$QRMap) {                    
     $QRMap = ORM::for_table('QRMap')->create();
     $QRMap->qr_id = $QRCode->qr_id;

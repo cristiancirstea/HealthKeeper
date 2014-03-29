@@ -1,6 +1,7 @@
 jQuery(document).ready(function() {
     var qrPathPrefix = 'WS/qrcodes/';
 
+    // Pregătesc cele două câmpuri pentru selectarea utilizatorilor înregistrați
     $('#lastName').select2({
         minimumInputLength: 2,
         ajax: {
@@ -38,16 +39,19 @@ jQuery(document).ready(function() {
         }
     });
 
+    // La fiecare modificare a câmpurilor se verifică validitatea lor
     $('.form-control').on('blur', function() {
         $('#form-info').html("");
         validateInput();
     });
 
+    // Când este apăsat butonul de generare, este apelată funcția care generează
+    // imaginea codului QR.
     $('#generate-qr').on('click', function() {
         if($('#generate-qr').hasClass('btn-success')) {
             $.ajax({
                 type: 'POST',
-                url: 'WS/ajax/generateqrcode.php',
+                url: 'WS/ajax/generateQRCode.php',
                 data: { userId:         $('#userId').val(), 
                         medicineName:   $('#medicineName').val(),
                         activeSubstance:$('#activeSubstance').val(),
@@ -61,6 +65,7 @@ jQuery(document).ready(function() {
                 if(data){
                     console.log(data);
                     data = JSON.parse(data);
+                    // Mesajul inițial este înlocuit cu codul QR
                     $("#QR").attr('src', qrPathPrefix + data.qrPath).removeClass('hidden');
                     $('#qr-placeholder').addClass('hidden');
                 } else {
@@ -73,6 +78,9 @@ jQuery(document).ready(function() {
     });
 });
 
+/**
+ * Validează datele adăugate în câmpuri, verificând să nu fie goale
+ */
 function validateInput() {
     var userId = $('#userId').val(),
         medicineName = $('#medicineName').val(),

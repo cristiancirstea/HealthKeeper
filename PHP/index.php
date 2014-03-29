@@ -1,5 +1,5 @@
 <?php
-//Adds additional CSS and JS files
+// Adaugă fișierele css și js adiționale
 $additionalCSS[] = array('SHORTCUT ICON', 'WS/library/img/ws-icon1.png');
 $additionalCSS[] = array('icon', 'WS/library/ws-icon1.png');
 $additionalCSS[] = array('apple-touch-icon-precomposed', 'WS/library/img/ws-icon1.png');
@@ -10,6 +10,7 @@ $additionalCSS[] = array('stylesheet', 'WS/library/css/style.css');
 $additionalCSS[] = array('stylesheet', 'WS/library/css/home.css');
 $additionalCSS[] = array('stylesheet', 'WS/library/css/select2.css');
 $additionalCSS[] = array('stylesheet', 'WS/library/css/select2-bootstrap.css');
+
 $additionalJS[] = 'WS/library/js/qrcode.js';
 $additionalJS[] = 'WS/library/js/select2.min.js';
 $additionalJS[] = 'WS/library/js/select2_locale_ro.js';

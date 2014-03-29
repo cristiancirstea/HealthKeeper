@@ -1,5 +1,5 @@
 <?php
-include './include/header.php';
+include './include/header-methods.php';
 include 'My_API.php';
 ?>
  <div class="container well">
@@ -146,5 +146,5 @@ include 'My_API.php';
 
 
 <?php
-include './include/footer.php';
+include './include/footer-methods.php';
 ?>
